@@ -68,8 +68,20 @@ For anything you are about to call Severe or High:
   "bugs" die here, and shipping one that dies in review costs you the reader's trust for the
   rest of the list.
 
+Prefer proof over argument. When a finding can be demonstrated by running something — a
+sabotaged callback that a test fails to catch, a two-line script showing a default value — do
+it. A green test suite next to a broken implementation ends the discussion; a paragraph
+explaining why the test is weak invites one. Keep the reproduction small and side-effect free,
+and if it needs infrastructure you don't have (a database, a live service), reproduce the
+mechanism in isolation rather than skipping the proof.
+
 Findings you could not fully verify are still worth reporting — label them as such and say what
 you would need to check.
+
+### 5. Write the review to a file
+
+The review is always saved to disk, never only printed into the conversation. See
+**Saving the review** below for the path, the header block, and what to put in the chat reply.
 
 ## What to look for
 
@@ -271,6 +283,63 @@ Rules for the write-up, because a junior engineer or a non-Ruby reader has to fo
 Close with a short **What's good** note when there is something genuinely good — a well-chosen
 abstraction, a thorough edge-case test. It is not flattery; it tells the author which instincts
 to keep.
+
+## Saving the review
+
+**Always write the review to a Markdown file.** A review of any depth is too long to work
+through in a terminal scrollback, and it needs to survive the session so it can be worked
+through finding by finding.
+
+Path, relative to the repo root:
+
+```
+analysis/<YYYY-MM-DD>-<file-basename-without-extension>-review.md
+```
+
+So a review of `spec/models/workflows/current_spec.rb` on 2026-08-07 becomes
+`analysis/2026-08-07-current_spec-review.md`. The date prefix keeps re-reviews of the same file
+from overwriting each other and sorts chronologically. Create `analysis/` if it does not exist.
+
+Check whether `analysis/` is in `.gitignore`. If it is not, the file will show up as untracked —
+say so in the chat reply so the author isn't surprised by it in `git status`, and does not
+commit it by accident.
+
+### Header block
+
+Findings cite line numbers, and line numbers rot. Open every saved review with a stamp of what
+it was accurate against, and be honest in it about what you could and could not verify:
+
+```markdown
+# Review: `spec/models/workflows/current_spec.rb`
+
+| | |
+|---|---|
+| **File reviewed** | `spec/models/workflows/current_spec.rb` |
+| **Subject under test** | `lib/workflows/configuration.rb:98-103` |
+| **Branch** | `WRK-1816-inline-perform-now-suppression` |
+| **Commit** | `b804bdef` |
+| **Date** | 2026-08-07 |
+| **Verification** | Rubocop clean. Test suite NOT run — no local MySQL. Finding 1 proven with a standalone reproduction. |
+
+All line references are relative to the repo root at the commit above.
+```
+
+Get the values with `git rev-parse --short HEAD` and `git branch --show-current`. The
+**Verification** row matters most — a reader has to know which findings were executed and which
+were reasoned. Never let it imply you ran something you did not.
+
+When a finding is backed by a reproduction script, save that next to the review as
+`analysis/<YYYY-MM-DD>-<basename>-finding-<n>-demo.rb`, paste its actual output into the
+finding, and record the exact command to re-run it.
+
+### What goes in the chat reply
+
+Do not paste the whole review back into the conversation — it is in the file. Reply with:
+
+1. The path to the saved file.
+2. The 2–4 sentence overall assessment, verbatim from the top of the review.
+3. A compact list — one line per finding, with its severity and number, no bodies.
+4. Anything that needs a decision from the author, or that you could not verify.
 
 ## Scope discipline
 
