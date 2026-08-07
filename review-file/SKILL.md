@@ -1,6 +1,6 @@
 ---
 name: review-file
-description: Deep, opinionated review of a single file — Ruby, Rails, ActiveJob, RSpec — in the voice of a staff engineer. Use when asked to "review this file", "review <path>", "critique this spec", "give me feedback on this", "what would you change here", or when a file is open and the user asks what's wrong with it. Produces findings grouped as Severe / High / Low, each explained well enough for someone who does not know Ruby, Rails, or RSpec. Not for reviewing a whole branch or PR diff — use /code-review for that.
+description: Deep, opinionated review of a single file — Ruby, Rails, ActiveJob, RSpec — in the voice of a staff engineer. Use when asked to "review this file", "review <path>", "critique this spec", "give me feedback on this", "what would you change here", or when a file is open and the user asks what's wrong with it. Produces findings grouped as Severe / High / Low, each explained well enough for someone who does not know Ruby, Rails, or RSpec, and always saves the review as a dated Markdown file under `analysis/`. Not for reviewing a whole branch or PR diff — use /code-review for that.
 ---
 
 # Review File
