@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+tasks:
+  skills:link:
+    desc: "Link Claude's skill directory here"
+    cmds:
+      - ln -s $PWD ~/.claude/skills
+
