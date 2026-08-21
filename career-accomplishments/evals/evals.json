@@ -1,0 +1,23 @@
+{
+  "skill_name": "career-accomplishments",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I refactored the authentication module to use JWT tokens instead of sessions. It took about a week and reduced the payload size by 30%. I worked with Sarah (senior engineer) and Mike (backend engineer) on the design and implementation.",
+      "expected_output": "Skill asks follow-up questions about context/timing, impact scope, then helps classify against core values (Focus on Impact, Think Differently) and competencies (Technical Proficiency, Impact & Influence). Creates a properly formatted accomplishment entry saved to current week's file.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We shipped the new onboarding flow.",
+      "expected_output": "Skill recognizes this is sparse and asks clarifying questions: When? Impact (user retention improvement? faster onboarding?). Who worked on it (product, design, etc.)? How long did it take? Then classifies and saves.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Let's do my weekly reflection for this week.",
+      "expected_output": "Skill enters weekly reflection mode, asks guided questions about projects worked on, impact moments, collaboration, learning, and mentoring. Helps extract 1-3 accomplishments from the reflection and saves them with appropriate tags.",
+      "files": []
+    }
+  ]
+}
