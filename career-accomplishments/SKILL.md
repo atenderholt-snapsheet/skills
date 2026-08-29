@@ -6,13 +6,23 @@ compatibility: Markdown, file system access
 
 # Career Accomplishments Tracker
 
-This skill helps you capture, reflect on, and organize career accomplishments. It works in two modes:
+This skill helps you capture, reflect on, and organize career accomplishments. It works in two
+modes:
 
-1. **Specific Accomplishment** — You describe something you did, and the skill asks clarifying questions to understand impact, collaborators, and timeline, then classifies it against your core values and competencies.
+1. **Specific Accomplishment** — You describe something you did, and the skill asks clarifying
+   questions to understand impact, collaborators, and timeline, then classifies it against your
+   core values and competencies.
 
-2. **Weekly Reflection** — The skill asks guided questions about your week to surface wins you may not have thought to log.
+2. **Weekly Reflection** — The skill asks guided questions about your week to surface wins you
+   may not have thought to log.
 
 Both modes save accomplishments to a structured archive organized by quarter and week.
+
+## Formatting rules
+
+- Markdown lines must not exceed 100 characters. Break onto a new line between words (never
+  mid-word) to stay under the limit. This applies to all prose in the SKILL.md file and to the
+  saved accomplishment files.
 
 ## How to use
 
@@ -28,7 +38,8 @@ The skill will:
    - **Impact**: What was the outcome? Who benefited? If quantifiable, what's the metric?
    - **Collaborators & Roles**: Who did you work with? What were their roles/titles?
    - **Timeline**: When did this happen? How long did it take?
-2. Ask you to select which **Core Values** this accomplishment demonstrates (from your company's 6 core values)
+2. Ask you to select which **Core Values** this accomplishment demonstrates (from your company's
+   6 core values)
 3. Ask you to select which **Competencies** this demonstrates (from your role's framework)
 4. Save the accomplishment to the appropriate week's file with all metadata
 
@@ -103,8 +114,10 @@ Each accomplishment in a week's file looks like:
 
 ## How the skill works
 
-1. **Determine context**: Figure out the current quarter and week (or ask if the accomplishment is from a different week)
-2. **Gather details**: Ask clarifying questions for incomplete information (impact, collaborators, timeline)
+1. **Determine context**: Figure out the current quarter and week (or ask if the accomplishment
+   is from a different week)
+2. **Gather details**: Ask clarifying questions for incomplete information (impact,
+   collaborators, timeline)
 3. **Classify**: Help you tag core values and competencies by asking which ones resonate most
 4. **Save**: Create or update the week's markdown file
 5. **Update summaries**: Offer to regenerate the quarterly summary and root README (TOC)
@@ -113,8 +126,10 @@ Each accomplishment in a week's file looks like:
 
 - Be specific about impact when you can (e.g., "reduced load time by 40%" vs. "made it faster")
 - Include collaborators so you capture what you did *with* others, not just what you did alone
-- If an accomplishment touches multiple core values or competencies, list them all — don't be conservative
-- The weekly reflection mode is great if you feel stuck; guided questions often surface wins you undervalue
+- If an accomplishment touches multiple core values or competencies, list them all — don't be
+  conservative
+- The weekly reflection mode is great if you feel stuck; guided questions often surface wins you
+  undervalue
 - You can log accomplishments retroactively — they don't have to be fresh
 
 ## Core Values reference
@@ -136,4 +151,5 @@ Your competencies framework (from Competencies_Tech.md):
 - Problem Solving
 - Impact & Influence
 
-Each competency has a description and examples at your current level (Lead Engineer / L3) and your target level (Staff Engineer / L4).
+Each competency has a description and examples at your current level (Lead Engineer / L3) and
+your target level (Staff Engineer / L4).
