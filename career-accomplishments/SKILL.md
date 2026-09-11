@@ -63,21 +63,29 @@ The skill will:
 
 ## Storage structure
 
-Accomplishments are stored in `~/Documents/Career/accomplishments/`:
+The TOC README lives at the **root** of `~/Documents/Career/`, not inside `accomplishments/`.
+Week files live below it, nested under `accomplishments/<quarter>/week_NN/`:
 
 ```
-accomplishments/
-├── README.md                 (TOC, quarterly summaries)
-├── 2026Q3/
-│   ├── week_36/
-│   │   └── README.md         (accomplishments for that week)
-│   ├── week_37/
-│   │   └── README.md
-│   └── ...
-└── 2026Q4/
-    └── week_40/
-        └── README.md
+Career/
+├── README.md                          (root TOC, quarterly summaries — the only README
+│                                        at this level; never add another one)
+└── accomplishments/
+    ├── 2026Q3/
+    │   ├── week_36/
+    │   │   └── README.md              (accomplishments for that week)
+    │   ├── week_37/
+    │   │   └── README.md
+    │   └── ...
+    └── 2026Q4/
+        └── week_40/
+            └── README.md
 ```
+
+There should only ever be **one** root-level README (`Career/README.md`). If a README is
+found directly under `accomplishments/`, merge its content into the root README and delete
+it — `accomplishments/` should only ever contain quarter/week subfolders, never its own
+README.
 
 Each week's file contains:
 - A list of accomplishments with metadata (date, time spent, collaborators, impact)
